@@ -44,6 +44,12 @@
       vertical-align: middle;
       max-height: 1em;
     }
+    .pub-list li {
+      text-align: justify;      /* 讓文字左右對齊 */
+      text-justify: inter-word; /* 單字之間均分間距 */
+      margin-bottom: 0.8em;     /* 每條之間加點空隙 */
+      line-height: 1.6;         /* 增加行距更好讀 */
+    }
   </style>
 </head>
 <body>
@@ -121,7 +127,7 @@
 
     <div class="section">
       <h2>所發表論文列表</h2>
-      <ol>
+      <ol class="pub-list">
         <li>Yan-Ru Ju, Tai-Lin Wu, <b>Chung-Chin Shih</b>, and Ti-Rong Wu, "Bridging Local and Global Knowledge via Transformer in Board Games," in <i>Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence</i>, IJCAI-25, August 2025. (Acceptance rate ≈ 19.3%)</li>
         <li>Chun-Jung Chen*, <b>Chung-Chin Shih*</b>, and Ti-Rong Wu, "Strength Estimation and Human-Like Strength Adjustment in Games," in <i>International Conference on Learning Representations (ICLR)</i>, 2025, ICLR-25, April 2025. (* indicates equal contribution)</li>
         <li>Ti-Rong Wu, Hung Guei, Pei-Chiun Peng, Po-Wei Huang, Ting Han Wei, <b>Chung-Chin Shih</b>, and Yun-Jui Tsai, "MiniZero: Comparative Analysis of AlphaZero and MuZero on Go, Othello, and Atari Games," <i>IEEE Transactions on Games</i>, vol. 17, no. 1, pp. 125-137, March 2025.</li>
