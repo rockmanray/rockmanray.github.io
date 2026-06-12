@@ -3,164 +3,512 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>施仲晉 (Chung-Chin Shih)- 個人網頁</title>
+  <title>Chung-Chin Shih | 施仲晉</title>
   <style>
+    :root {
+      --bg: #faf9f6;
+      --paper: #ffffff;
+      --ink: #222426;
+      --muted: #63676b;
+      --faint: #8b9094;
+      --line: #dedbd2;
+      --accent: #7a3f2a;
+      --accent-strong: #4b2d24;
+      --accent-soft: #f1e7df;
+      --link: #16606a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
-      line-height: 1.8;
       margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-      color: #333;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Inter", "Segoe UI", "Noto Sans TC", "PingFang TC", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.72;
     }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem;
-      background: white;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin-top: 2rem;
-    }
-    h1, h2, h3 {
-      color: #0059b3;
-    }
-    ul {
-      padding-left: 1.5em;
-    }
+
     a {
-      color: #0059b3;
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    .site {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 36px 24px 72px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+      padding-bottom: 26px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      color: var(--accent-strong);
+      font-family: Georgia, "Times New Roman", "Noto Serif TC", serif;
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: flex-end;
+      font-size: 0.94rem;
+    }
+
+    .nav a {
+      color: var(--muted);
       text-decoration: none;
     }
-    a:hover {
+
+    .nav a:hover {
+      color: var(--accent);
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 44px;
+      padding: 48px 0 40px;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+
+    .portrait {
+      width: 100%;
+      max-width: 190px;
+      aspect-ratio: 226 / 335;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    .sidebar {
+      display: grid;
+      gap: 22px;
+    }
+
+    .contact-block,
+    .profile-links {
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--accent-strong);
+      font-family: Georgia, "Times New Roman", "Noto Serif TC", serif;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      font-weight: 650;
+      letter-spacing: 0;
+      line-height: 1.03;
+    }
+
+    .name-zh {
+      display: block;
+      margin-top: 12px;
+      color: var(--ink);
+      font-family: "Noto Sans TC", "PingFang TC", Arial, sans-serif;
+      font-size: clamp(1.45rem, 2.5vw, 2rem);
+      font-weight: 600;
+    }
+
+    .role {
+      margin: 24px 0 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.12rem;
+    }
+
+    .summary {
+      max-width: 820px;
+      margin: 24px 0 0;
+      font-size: 1.02rem;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .quick-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--accent-strong);
+      text-decoration: none;
+      font-size: 0.94rem;
+    }
+
+    .quick-links a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.72fr) minmax(0, 2fr);
+      gap: 44px;
+      padding-top: 40px;
+      align-items: start;
+    }
+
+    .side,
+    .main {
+      display: grid;
+      gap: 32px;
+    }
+
+    h2 {
+      margin: 0 0 15px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid var(--line);
+      color: var(--accent-strong);
+      font-size: 0.9rem;
+      font-weight: 750;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      margin: 0 0 5px;
+      color: var(--ink);
+      font-size: 1rem;
+      line-height: 1.45;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    ul,
+    ol {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    li {
+      margin-bottom: 0.62rem;
+    }
+
+    .plain-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .plain-list li {
+      margin-bottom: 0.82rem;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tag-list li {
+      margin: 0;
+      padding: 5px 10px;
+      background: var(--accent-soft);
+      border: 1px solid #e1d1c6;
+      color: var(--accent-strong);
+      font-size: 0.92rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .email-img {
+      max-width: 100%;
+      height: 18px;
+      vertical-align: middle;
+    }
+
+    .profile-links ul {
+      display: grid;
+      gap: 6px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .profile-links li {
+      margin: 0;
+    }
+
+    .profile-links a {
+      text-decoration: none;
+    }
+
+    .profile-links a:hover {
       text-decoration: underline;
     }
-    .section {
-      margin-bottom: 2rem;
+
+    .entry {
+      padding-bottom: 17px;
+      border-bottom: 1px solid var(--line);
     }
-    .label {
-      font-weight: bold;
+
+    .entry:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
     }
-    .email-img {
-      vertical-align: middle;
-      max-height: 1em;
+
+    .pub-list {
+      padding-left: 1.45rem;
     }
+
     .pub-list li {
-      text-align: justify;      /* 讓文字左右對齊 */
-      text-justify: inter-word; /* 單字之間均分間距 */
-      margin-bottom: 0.8em;     /* 每條之間加點空隙 */
-      line-height: 1.6;         /* 增加行距更好讀 */
+      margin-bottom: 0.9rem;
+      line-height: 1.62;
+    }
+
+    .note {
+      color: var(--faint);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 840px) {
+      .site {
+        padding: 24px 18px 48px;
+      }
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .intro,
+      .content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .portrait {
+        max-width: 160px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>施仲晉 (Chung-Chin Shih)</h1>
+  <main class="site">
+    <header class="topbar">
+      <div class="brand">Chung-Chin Shih / 施仲晉</div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#service">Service</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-    <div class="section">
-      <h2>基本資料</h2>
-      <p><span class="label">性別：</span>男</p>
-      <p><span class="label">出生年月日：</span>民國77年11月19日</p>
-      <p><span class="label">電話：</span>(O): 02-27883799#2454 / (H): 04-7356163</p>
-      <p><span class="label">手機：</span>0963-108-663</p>      
-      <p><span class="label">通訊地址：</span>台北市南港區南深路33號1樓之7</p>
-      <p><span class="label">電子郵件：</span><img class="email-img" src="email.png">/<img class="email-img" src="email(sinica).png" style="width:30%; height:auto;"></p>
+    <section class="intro" aria-labelledby="page-title">
+      <aside class="sidebar" id="contact">
+        <img class="portrait" src="rockmanray.jpg" alt="Portrait of Chung-Chin Shih">
+
+        <div class="contact-block">
+          <h2>Contact</h2>
+          <p>Institute of Information Science<br>Academia Sinica</p>
+          <p class="meta">128 Academia Road, Section 2<br>Nankang, Taipei, Taiwan</p>
+          <p>
+            <img class="email-img" src="email.png" alt="Email address">
+          </p>
+          <p>
+            <img class="email-img" src="email(sinica).png" alt="Academia Sinica email address">
+          </p>
+        </div>
+
+        <div class="profile-links">
+          <h2>Profiles</h2>
+          <ul>
+            <li><a href="https://scholar.google.com.tw/citations?user=d8ddHWgAAAAJ&hl=zh-TW" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+            <li><a href="https://github.com/rockmanray/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://orcid.org/0000-0003-4261-4871" target="_blank" rel="noopener noreferrer">ORCID</a></li>
+            <li><a href="https://dblp.org/pid/131/2745.html" target="_blank" rel="noopener noreferrer">DBLP</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <div>
+        <h1 id="page-title">
+          Chung-Chin Shih
+          <span class="name-zh">施仲晉</span>
+        </h1>
+        <p class="role">
+          Postdoctoral Research Scholar, Institute of Information Science, Academia Sinica
+        </p>
+        <p class="summary">
+          I work on computer game theory, game solving, and reinforcement learning methods for board games. My recent research studies how search, learning, and proof techniques can be combined to solve difficult game problems and build stronger game AI systems.
+        </p>
+        <div class="quick-links" aria-label="External profile links">
+          <a href="https://scholar.google.com.tw/citations?user=d8ddHWgAAAAJ&hl=zh-TW" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+          <a href="https://github.com/rockmanray/" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://orcid.org/0000-0003-4261-4871" target="_blank" rel="noopener noreferrer">ORCID</a>
+          <a href="https://dblp.org/pid/131/2745.html" target="_blank" rel="noopener noreferrer">DBLP</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="content">
+      <aside class="side">
+        <section id="research">
+          <h2>Research</h2>
+          <ul class="tag-list">
+            <li>Computer Game Theory</li>
+            <li>Game Solving</li>
+            <li>Deep Reinforcement Learning</li>
+            <li>AlphaZero and MuZero</li>
+            <li>Board Games</li>
+            <li>Search Algorithms</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Appointments</h2>
+          <ul class="plain-list">
+            <li>
+              <strong>Postdoctoral Research Scholar</strong><br>
+              Institute of Information Science, Academia Sinica<br>
+              <span class="meta">Dec. 2023 - Present</span>
+            </li>
+            <li>
+              <strong>Research Assistant</strong><br>
+              Institute of Information Science, Academia Sinica<br>
+              <span class="meta">Jan. 2023 - Nov. 2023</span>
+            </li>
+            <li>
+              <strong>Research Assistant</strong><br>
+              Research Center for Information Technology Innovation, Academia Sinica<br>
+              <span class="meta">Oct. 2020 - Dec. 2022</span>
+            </li>
+            <li>
+              <strong>Research Assistant</strong><br>
+              National Health Research Institutes<br>
+              <span class="meta">Apr. 2012 - Sep. 2013</span>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Education</h2>
+          <ul class="plain-list">
+            <li>
+              <strong>Ph.D. in Computer Science</strong><br>
+              National Yang Ming Chiao Tung University<br>
+              <span class="meta">Feb. 2014 - Nov. 2023</span>
+            </li>
+            <li>
+              <strong>B.S. in Computer Science</strong><br>
+              National Chiao Tung University<br>
+              <span class="meta">Sep. 2007 - Jun. 2011</span>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Skills</h2>
+          <ul class="tag-list">
+            <li>C/C++</li>
+            <li>Python</li>
+            <li>PHP</li>
+            <li>MySQL</li>
+            <li>Linux</li>
+          </ul>
+        </section>
+      </aside>
+
+      <div class="main">
+        <section>
+          <h2>Selected Honors</h2>
+          <div class="entry">
+            <h3>Doctoral Dissertation Award, Taiwan Computer Game Association</h3>
+            <p class="meta">Excellent Award, 2024</p>
+          </div>
+          <div class="entry">
+            <h3>Master's and Doctoral Thesis Award, Taiwanese Association for Artificial Intelligence</h3>
+            <p class="meta">Honorable Mention, 2024</p>
+          </div>
+          <div class="entry">
+            <h3>IEEE CIS Taipei Chapter Master's and Doctoral Thesis Award</h3>
+            <p class="meta">2024</p>
+          </div>
+        </section>
+
+        <section>
+          <h2>Research Grants</h2>
+          <p>
+            <strong>Collaborating Researcher</strong>, NSTC project “Zero-Knowledge Reinforcement Learning Techniques and Applications to Computer Games - Subproject 2: Research on Exact Proof Problems Based on Zero-Knowledge Reinforcement Learning Techniques”
+            (<i>NSTC113-2221-E-001-009-MY3</i>), Aug. 2024 - Jul. 2027.
+          </p>
+        </section>
+
+        <section id="service">
+          <h2>Academic Service</h2>
+          <ul>
+            <li>The Thirty-Fourth International Joint Conference on Artificial Intelligence (IJCAI-25), Reviewer</li>
+            <li>AI/ML and Application Workshop at ICS-2024, Program Committee Member</li>
+            <li>International Computer Symposium 2024 (ICS-2024), Reviewer</li>
+            <li>The Forty-first International Conference on Machine Learning (ICML-2024), Reviewer</li>
+            <li>The Thirty-Eighth AAAI Conference on Artificial Intelligence (AAAI-2024) Student Abstracts, Reviewer</li>
+          </ul>
+        </section>
+
+        <section id="publications">
+          <h2>Publications</h2>
+          <ol class="pub-list">
+            <li>Chun-Jui Wang, Jian-Ting Guo, Hung Guei, <b>Chung-Chin Shih</b>, Ti-Rong Wu, and I-Chen Wu, "Evaluating Game Difficulty in Tetris Block Puzzle," in <i>30th Game Programming Workshop</i>, GPW-25, 2025.</li>
+            <li>Chi-Huang Lin, Ting-Han Wei, Chun-Jui Wang, Hung Guei, <b>Chung-Chin Shih</b>, Yun-Jui Tsai, I-Chen Wu, and Ti-Rong Wu, "Relevance-Zone Reduction in Game Solving," in <i>Proceedings of the 18th International Conference on Advances in Computer Games</i>, ACG-2025, October 2025.</li>
+            <li>Yan-Ru Ju, Tai-Lin Wu, <b>Chung-Chin Shih</b>, and Ti-Rong Wu, "Bridging Local and Global Knowledge via Transformer in Board Games," in <i>Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence</i>, IJCAI-25, August 2025. (Acceptance rate approx. 19.3%)</li>
+            <li>Chun-Jung Chen*, <b>Chung-Chin Shih*</b>, and Ti-Rong Wu, "Strength Estimation and Human-Like Strength Adjustment in Games," in <i>International Conference on Learning Representations (ICLR)</i>, ICLR-25, April 2025. (* indicates equal contribution)</li>
+            <li>Ti-Rong Wu, Hung Guei, Pei-Chiun Peng, Po-Wei Huang, Ting Han Wei, <b>Chung-Chin Shih</b>, and Yun-Jui Tsai, "MiniZero: Comparative Analysis of AlphaZero and MuZero on Go, Othello, and Atari Games," <i>IEEE Transactions on Games</i>, vol. 17, no. 1, pp. 125-137, March 2025.</li>
+            <li>Yun-Jui Tsai, Ting Han Wei, Chi-Huang Lin, <b>Chung-Chin Shih</b>, Hung Guei, I-Chen Wu, and Ti-Rong Wu, "Solving 7x7 Killall-Go with Seki Database," in <i>Computers and Games: 12th International Conference, CG 2024</i>, CG-2024, pp. 66-76, November 2024.</li>
+            <li>Yen-Yi Chen, <b>Chung-Chin Shih</b>, Ti-Rong Wu, and I-Chen Wu, "Exploring Openings in AtariGo," in <i>2024 International Computer Symposium (ICS) Conference Proceedings</i>, ICS-2024, Hsinchu, Taiwan, October 2024, short paper.</li>
+            <li><b>Chung-Chin Shih</b>, Ting Han Wei, Ti-Rong Wu, and I-Chen Wu, "A Local-Pattern Related Look-Up Table," <i>IEEE Transactions on Games</i>, vol. 16, no. 2, pp. 282-290, June 2024.</li>
+            <li>Ti-Rong Wu, Hung Guei, Ting Han Wei, <b>Chung-Chin Shih</b>, Jui-Te Chin, and I-Chen Wu, "Game Solving with Online Fine-tuning," in <i>Advances in Neural Information Processing Systems 36 (NeurIPS 2023)</i>, New Orleans, December 2023. (Acceptance rate: 3221/12343 approx. 26.1%)</li>
+            <li><b>Chung-Chin Shih</b>, Ti-Rong Wu, Ting Han Wei, Hung Guei, Yu-Shan Hsu, and I-Chen Wu, "Analysis of Solving Life-and-Death Problems on Deep Learning," in <i>Proceedings of the 1st Regular Academic Conference of ISGS</i>, Myongji University, Korea, August 2023.</li>
+            <li>Ti-Rong Wu, <b>Chung-Chin Shih</b>, Ting Han Wei, Meng-Yu Tsai, Wei-Yuan Hsu, and I-Chen Wu, "AlphaZero-based Proof Cost Network to Aid Game Solving," in <i>International Conference on Learning Representations (ICLR)</i>, ICLR-22, April 2022. (Acceptance rate: 1,095/3,391 approx. 32.3%)</li>
+            <li><b>Chung-Chin Shih</b>, Ti-Rong Wu, Ting Han Wei, and I-Chen Wu, "A Novel Approach to Solving Goal-Achieving Problems for Board Games," in <i>Proceedings of the AAAI Conference on Artificial Intelligence</i>, vol. 36, no. 9, pp. 10362-10369, February 2022. (Acceptance rate: 1349/9020 approx. 15%)</li>
+            <li><b>Chung-Chin Shih</b>, An-Jen Liu, and I-Chen Wu, "2017 CITIC Securities Cup - The 1st World AI Go Open," <i>ICGA Journal</i>, vol. 40, no. 4, pp. 363-368, December 2018.</li>
+            <li><b>Chung-Chin Shih</b>, Ting Han Wei, Zheng-Yuan Lee, and I-Chen Wu, "Playing Games with the Job-Level Computation System," in <i>23rd Game Programming Workshop</i>, GPW-18, Kanagawa, Japan, November 16-18, 2018.</li>
+            <li>Ting-Fu Liao, I-Chen Wu, Guan-Wun Chen, <b>Chung-Chin Shih</b>, Po-Ya Kang, Bing-Tsung Chiang, Ting-Chu Ho, and Ti-Rong Wu, "A Study of Software Framework for Parallel Monte Carlo Tree Search," in <i>19th Game Programming Workshop</i>, GPW-14, Hakone Seminar House, Kanagawa, Japan, November 7-9, 2014.</li>
+            <li>Ren-Hua Chung and <b>Chung-Chin Shih</b>, "SeqSIMLA: a sequence and phenotype simulation tool for complex disease studies," <i>BMC Bioinformatics</i>, vol. 14, no. 1, article 199, June 2013.</li>
+          </ol>
+          <p class="note">Selected publication links can be added later for DOI, arXiv, code, slides, and project pages.</p>
+        </section>
+      </div>
     </div>
-
-    <div class="section">
-      <h2>語言能力</h2>
-      <p>中文、英文（TOEFL ITP 563分）</p>
-    </div>
-
-    <div class="section">
-      <h2>專業知識</h2>
-      <ul>
-        <li>電腦對局理論</li>
-        <li>強化式深度學習</li>
-        <li>計算機架構</li>
-        <li>作業系統原理</li>
-        <li>資料結構</li>
-        <li>程式設計</li>
-        <li>資料庫系統建構</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>技能</h2>
-      <p>C/C++、Python、PHP、MySQL、Linux系統操作、Photoshop</p>
-    </div>
-
-    <div class="section">
-      <h2>學歷</h2>
-      <ul>
-        <li>國立陽明交通大學 資訊科學與工程研究所 博士班 畢業（Feb. 2014 - Nov. 2023）</li>
-        <li>國立交通大學 資訊工程學系 畢業（Sep. 2007 - Jun. 2011）</li>
-        <li>國立彰化高中 畢業（Sep. 2004 - Jun. 2007）</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>經歷</h2>
-      <ul>
-        <li>中央研究院 資訊科學研究所 博士後研究學者（Dec. 2023 - 至今）</li>
-		<li>中央研究院 資訊科學研究所 研究助理（Jan. 2023 - Nov. 2023）</li>
-        <li>中央研究院 資訊科技創新研究中心 研究助理（Oct. 2020 - Dec. 2022）</li>
-        <li>國家衛生研究院 群體健康研究所 研究助理（Apr. 2012 - Sep. 2013）</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>獎項</h2>
-      <ul>
-        <li>2024 台灣電腦對局研討會 博士論文獎 優等</li>
-        <li>2024 中華民國人工智慧學會113年度碩博士論文獎 佳作</li>
-        <li>2024 IEEE CIS台北分會 113年度碩博士論文獎</li>
-      </ul>
-    </div>
-
-	<div class="section">
-	  <h2>國科會計畫</h2>
-	  <ul>
-		<li>
-		  <b>協同研究人員</b>，國科會「零知識強化學習技術及其應用於電腦遊戲之研究－子計畫二：基於零知識強化學習技術之精確證明問題研究」
-		  (<i>NSTC113-2221-E-001-009-MY3</i>), Aug. 2024 – Jul. 2027.
-		</li>
-	  </ul>
-	</div>
-
-
-    <div class="section">
-      <h2>學術服務</h2>
-      <ul>
-		<li>The Thirty-Fourth International Joint Conference on Artificial Intelligence (IJCAI-25) Reviewer</li>
-        <li>Program Committee (PC) Member of AI/ML and Application Workshop at ICS-2024</li>
-		<li>International Computer Symposium 2024 (ICS-2024) Reviewer</li>
-        <li>The Forty-first International Conference on Machine Learning (ICML-2024) Reviewer</li>
-        <li>The Thirty-Eighth AAAI Conference on Artificial Intelligence (AAAI-2024) Student Abstracts Reviewer</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>所發表論文列表</h2>
-      <ol class="pub-list">
-		<li>Chun-Jui Wang, Jian-Ting Guo, Hung Guei, <b>Chung-Chin Shih</b>, Ti-Rong Wu, and I-Chen Wu, "Evaluating Game Difficulty in Tetris Block Puzzle," in <i>30th Game Programming Workshop</i>, GPW-25, 2025.</li>
-		<li>Chi-Huang Lin, Ting-Han Wei, Chun-Jui Wang, Hung Guei, <b>Chung-Chin Shih</b>, Yun-Jui Tsai, I-Chen Wu, and Ti-Rong Wu, "Relevance-Zone Reduction in Game Solving," in <i>Proceedings of the 18th International Conference on Advances in Computer Games</i>, ACG-2025, October 2025.</li>	  
-        <li>Yan-Ru Ju, Tai-Lin Wu, <b>Chung-Chin Shih</b>, and Ti-Rong Wu, "Bridging Local and Global Knowledge via Transformer in Board Games," in <i>Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence</i>, IJCAI-25, August 2025. (Acceptance rate ≈ 19.3%)</li>
-        <li>Chun-Jung Chen*, <b>Chung-Chin Shih*</b>, and Ti-Rong Wu, "Strength Estimation and Human-Like Strength Adjustment in Games," in <i>International Conference on Learning Representations (ICLR)</i>, 2025, ICLR-25, April 2025. (* indicates equal contribution)</li>
-        <li>Ti-Rong Wu, Hung Guei, Pei-Chiun Peng, Po-Wei Huang, Ting Han Wei, <b>Chung-Chin Shih</b>, and Yun-Jui Tsai, "MiniZero: Comparative Analysis of AlphaZero and MuZero on Go, Othello, and Atari Games," <i>IEEE Transactions on Games</i>, vol. 17, no. 1, pp. 125-137, March 2025.</li>
-        <li>Yun-Jui Tsai, Ting Han Wei, Chi-Huang Lin, <b>Chung-Chin Shih</b>, Hung Guei, I-Chen Wu, and Ti-Rong Wu, "Solving 7x7 Killall-Go with Seki Database," in <i>Computers and Games: 12th International Conference, CG 2024</i>, CG-2024, pp. 66-76, November 2024.</li>
-        <li>Yen-Yi Chen, <b>Chung-Chin Shih</b>, Ti-Rong Wu, and I-Chen Wu, "Exploring Openings in AtariGo," in <i>2024 International Computer Symposium (ICS) Conference Proceedings</i>, ICS-2024, Hsinchu, Taiwan, October 2024, short paper.</li>
-        <li><b>Chung-Chin Shih</b>, Ting Han Wei, Ti-Rong Wu, and I-Chen Wu, "A Local-Pattern Related Look-Up Table," <i>IEEE Transactions on Games</i>, vol. 16, no. 2, pp. 282-290, June 2024.</li>
-        <li>Ti-Rong Wu, Hung Guei, Ting Han Wei, <b>Chung-Chin Shih</b>, Jui-Te Chin, and I-Chen Wu, "Game Solving with Online Fine-tuning," in <i>Advances in Neural Information Processing Systems 36 (NeurIPS 2023)</i>, New Orleans, December 2023. (Acceptance rate: 3221/12343 ≈ 26.1%)</li>
-        <li><b>Chung-Chin Shih</b>, Ti-Rong Wu, Ting Han Wei, Hung Guei, Yu-Shan Hsu, and I-Chen Wu, "Analysis of Solving Life-and-Death Problems on Deep Learning," in <i>Proceedings of the 1st Regular Academic Conference of ISGS</i>, Myongji University, Korea, August 2023.</li>
-        <li>Ti-Rong Wu, <b>Chung-Chin Shih</b>, Ting Han Wei, Meng-Yu Tsai, Wei-Yuan Hsu, and I-Chen Wu, "AlphaZero-based Proof Cost Network to Aid Game Solving," in <i>International Conference on Learning Representations (ICLR)</i>, 2022, ICLR-22, April 2022. (Acceptance rate: 1,095/3,391 ≈ 32.3%)</li>    
-        <li><b>Chung-Chin Shih</b>, Ti-Rong Wu, Ting Han Wei, and I-Chen Wu, "A Novel Approach to Solving Goal-Achieving Problems for Board Games," in <i>Proceedings of the AAAI Conference on Artificial Intelligence</i>, vol. 36, no. 9, pp. 10362-10369, February 2022. (Acceptance rate: 1349/9020 ≈ 15%)</li>    
-        <li><b>Chung-Chin Shih</b>, An-Jen Liu, and I-Chen Wu, "2017 CITIC Securities Cup – The 1st World AI Go Open," <i>ICGA Journal</i>, vol. 40, no. 4, pp. 363-368, December 2018.</li>    
-        <li><b>Chung-Chin Shih</b>, Ting Han Wei, Zheng-Yuan Lee, and I-Chen Wu, "Playing Games with the Job-Level Computation System," in <i>23rd Game Programming Workshop</i>, GPW-18, Kanagawa, Japan, November 16-18, 2018.</li>    
-        <li>Ting-Fu Liao, I-Chen Wu, Guan-Wun Chen, <b>Chung-Chin Shih</b>, Po-Ya Kang, Bing-Tsung Chiang, Ting-Chu Ho, and Ti-Rong Wu, "A Study of Software Framework for Parallel Monte Carlo Tree Search," in <i>19th Game Programming Workshop</i>, GPW-14, Hakone Seminar House, Kanagawa, Japan, November 7-9, 2014.</li>    
-        <li>Ren-Hua Chung and <b>Chung-Chin Shih</b>, "SeqSIMLA: a sequence and phenotype simulation tool for complex disease studies," <i>BMC Bioinformatics</i>, vol. 14, no. 1, article 199, June 2013.</li>
-      </ol>
-    </div>
-
-  </div>
+  </main>
 </body>
 </html>
