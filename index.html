@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chung-Chin Shih | 施仲晉</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <style>
     :root {
       --bg: #faf9f6;
@@ -107,10 +108,13 @@
       gap: 22px;
     }
 
-    .contact-block,
-    .profile-links {
+    .contact-block {
       padding-top: 18px;
       border-top: 1px solid var(--line);
+    }
+
+    .intro-research {
+      margin-top: 28px;
     }
 
     h1 {
@@ -175,6 +179,12 @@
       gap: 44px;
       padding-top: 40px;
       align-items: start;
+    }
+
+    .front-sections {
+      display: grid;
+      gap: 32px;
+      padding-top: 40px;
     }
 
     .side,
@@ -252,26 +262,6 @@
       vertical-align: middle;
     }
 
-    .profile-links ul {
-      display: grid;
-      gap: 6px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .profile-links li {
-      margin: 0;
-    }
-
-    .profile-links a {
-      text-decoration: none;
-    }
-
-    .profile-links a:hover {
-      text-decoration: underline;
-    }
-
     .entry {
       padding-bottom: 17px;
       border-bottom: 1px solid var(--line);
@@ -280,6 +270,20 @@
     .entry:last-child {
       padding-bottom: 0;
       border-bottom: 0;
+    }
+
+    .student-recruitment {
+      padding: 22px 24px;
+      border: 1px solid #e1d1c6;
+      background: var(--accent-soft);
+    }
+
+    .student-recruitment h2 {
+      border-bottom-color: #d6bfae;
+    }
+
+    .student-recruitment p:last-child {
+      margin-bottom: 0;
     }
 
     .pub-list {
@@ -327,7 +331,9 @@
     <header class="topbar">
       <div class="brand">Chung-Chin Shih / 施仲晉</div>
       <nav class="nav" aria-label="Main navigation">
-        <a href="#research">Research</a>
+        <a href="#news">News</a>
+        <a href="#research">Research Interest</a>
+        <a href="#students">Students</a>
         <a href="#publications">Publications</a>
         <a href="#service">Service</a>
         <a href="#contact">Contact</a>
@@ -340,25 +346,12 @@
 
         <div class="contact-block">
           <h2>Contact</h2>
-          <p>Institute of Information Science<br>Academia Sinica</p>
-          <p class="meta">128 Academia Road, Section 2<br>Nankang, Taipei, Taiwan</p>
+          <p>The Institute of Computer Science and Information Engineering<br>National Chung Cheng University</p>
           <p>
             <img class="email-img" src="email.png" alt="Email address">
           </p>
-          <p>
-            <img class="email-img" src="email(sinica).png" alt="Academia Sinica email address">
-          </p>
         </div>
 
-        <div class="profile-links">
-          <h2>Profiles</h2>
-          <ul>
-            <li><a href="https://scholar.google.com.tw/citations?user=d8ddHWgAAAAJ&hl=zh-TW" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
-            <li><a href="https://github.com/rockmanray/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="https://orcid.org/0000-0003-4261-4871" target="_blank" rel="noopener noreferrer">ORCID</a></li>
-            <li><a href="https://dblp.org/pid/131/2745.html" target="_blank" rel="noopener noreferrer">DBLP</a></li>
-          </ul>
-        </div>
       </aside>
 
       <div>
@@ -367,24 +360,13 @@
           <span class="name-zh">施仲晉</span>
         </h1>
         <p class="role">
-          Postdoctoral Research Scholar, Institute of Information Science, Academia Sinica
+          Incoming Assistant Professor (starting August 2026), The Institute of Computer Science and Information Engineering, National Chung Cheng University
         </p>
         <p class="summary">
           I work on computer game theory, game solving, and reinforcement learning methods for board games. My recent research studies how search, learning, and proof techniques can be combined to solve difficult game problems and build stronger game AI systems.
         </p>
-        <div class="quick-links" aria-label="External profile links">
-          <a href="https://scholar.google.com.tw/citations?user=d8ddHWgAAAAJ&hl=zh-TW" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-          <a href="https://github.com/rockmanray/" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://orcid.org/0000-0003-4261-4871" target="_blank" rel="noopener noreferrer">ORCID</a>
-          <a href="https://dblp.org/pid/131/2745.html" target="_blank" rel="noopener noreferrer">DBLP</a>
-        </div>
-      </div>
-    </section>
-
-    <div class="content">
-      <aside class="side">
-        <section id="research">
-          <h2>Research</h2>
+        <section id="research" class="intro-research">
+          <h2>Research Interest</h2>
           <ul class="tag-list">
             <li>Computer Game Theory</li>
             <li>Game Solving</li>
@@ -394,14 +376,63 @@
             <li>Search Algorithms</li>
           </ul>
         </section>
+        <div class="quick-links" aria-label="External profile links">
+          <a href="https://scholar.google.com.tw/citations?user=d8ddHWgAAAAJ&hl=zh-TW" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+          <a href="https://github.com/rockmanray/" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://orcid.org/0000-0003-4261-4871" target="_blank" rel="noopener noreferrer">ORCID</a>
+          <a href="https://dblp.org/pid/131/2745.html" target="_blank" rel="noopener noreferrer">DBLP</a>
+        </div>
+      </div>
+    </section>
 
+    <div class="front-sections">
+      <section id="news">
+        <h2>News</h2>
+        <div class="entry">
+          <h3>I will join National Chung Cheng University as an Assistant Professor in August 2026.</h3>
+          <p class="meta">Jul. 2026</p>
+        </div>
+        <div class="entry">
+          <h3>I am recruiting prospective master's students interested in computer game theory, game solving, reinforcement learning, and related areas.</h3>
+          <p class="meta">Jul. 2026</p>
+        </div>
+        <div class="entry">
+          <h3>Selected as a Gold Reviewer (Top 25%) for the ICML 2026 Position Paper Track.</h3>
+          <p class="meta">2026</p>
+        </div>
+      </section>
+
+      <section id="students" class="student-recruitment">
+        <h2>Prospective Master's Students</h2>
+        <p>
+          I am recruiting motivated master's students at National Chung Cheng University who are interested in computer game theory, game solving, reinforcement learning, and related areas.
+        </p>
+        <p>
+          If you are interested in joining my research group, please email
+          <a href="mailto:rockmanray@gmail.com">rockmanray@gmail.com</a>
+          with your CV, academic transcript, and any other materials that may support your application.
+        </p>
+        <p lang="zh-Hant">
+          目前招募對電腦賽局理論、遊戲求解、強化學習及相關領域有興趣的中正大學碩士生。有興趣加入研究團隊者，請將履歷、歷年成績單及其他有利於申請的資料寄至
+          <a href="mailto:rockmanray@gmail.com">rockmanray@gmail.com</a>。
+        </p>
+      </section>
+    </div>
+
+    <div class="content">
+      <aside class="side">
         <section>
           <h2>Appointments</h2>
           <ul class="plain-list">
             <li>
+              <strong>Incoming Assistant Professor</strong><br>
+              The Institute of Computer Science and Information Engineering, National Chung Cheng University<br>
+              <span class="meta">Starting Aug. 2026</span>
+            </li>
+            <li>
               <strong>Postdoctoral Research Scholar</strong><br>
               Institute of Information Science, Academia Sinica<br>
-              <span class="meta">Dec. 2023 - Present</span>
+              <span class="meta">Dec. 2023 - Jul. 2026</span>
             </li>
             <li>
               <strong>Research Assistant</strong><br>
@@ -443,8 +474,8 @@
         <section>
           <h2>Selected Honors</h2>
           <div class="entry">
-            <h3>Gold Reviewer, Forty-Third International Conference on Machine Learning (ICML-26), Position Paper Track</h3>
-            <p class="meta">Top 25%, 2026</p>
+            <h3>Gold Reviewer (Top 25%), Forty-Third International Conference on Machine Learning (ICML-26), Position Paper Track</h3>
+            <p class="meta">2026</p>
           </div>
           <div class="entry">
             <h3>Doctoral Dissertation Award, IEEE CIS Taipei Chapter</h3>
